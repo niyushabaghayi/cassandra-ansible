@@ -1,6 +1,6 @@
 <img width="400px" src="image/cassandra.png">
 
-# Install Apache Cassandra by Ansible
+# Install Apache Cassandra cluster by Ansible
 
 ## Prerequisites
 
