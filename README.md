@@ -18,18 +18,18 @@ In order to install Apache Cassandra cluster on your nodes, it is required to do
 
 4. Execute the following command:
   ```bash
-  ansible-playbook -i <path-to-inventory-file> cluster.yaml -e ansible_ssh_port=8822 -v -b -kK
+  ansible-playbook -i <path-to-inventory-file> cluster.yaml -v -b -kK
   # e.g.
-  ansible-playbook -i inventory/inventory.yaml cluster.yaml -e ansible_ssh_port=8822 -v -b -kK
+  ansible-playbook -i inventory/inventory.yaml cluster.yaml -v -b -kK
   ```
 
 ## Start the Cluster
 ```bash
-ansible-playbook -i inventory/inventory.yaml start.yaml -e ansible_ssh_port=8822 -v -b -kK
+ansible-playbook -i inventory/inventory.yaml start.yaml -v -b -kK
 ```
 ## Remove Apache Cassandra
 ```bash
-ansible-playbook -i inventory/inventory.yaml remove.yaml -e ansible_ssh_port=8822 -v -b -kK
+ansible-playbook -i inventory/inventory.yaml remove.yaml -v -b -kK
 ```
 # Jobs to be done
 
