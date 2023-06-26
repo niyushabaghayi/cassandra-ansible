@@ -1,0 +1,45 @@
+all:
+  hosts:
+    server1:
+      ansible_user: niusha
+      ansible_host: 192.168.60.162
+      ip: 192.168.60.162
+      access_ip: 192.168.60.162
+    server2:
+      ansible_user: niusha
+      ansible_host: 192.168.60.163
+      ip: 192.168.60.163
+      access_ip: 192.168.60.163
+    server3:
+      ansible_user: niusha
+      ansible_host: 192.168.60.16
+      ip: 192.168.60.16
+      access_ip: 192.168.60.16
+
+    seed1:
+      ansible_user: root
+      ansible_host: 192.168.60.162
+      ip: 192.168.60.162
+      access_ip: 192.168.60.162
+    seed2:
+      ansible_user: root
+      ansible_host: 192.168.60.163
+      ip: 192.168.60.163
+      access_ip: 192.168.60.163
+    seed3:
+      ansible_user: root
+      ansible_host: 192.168.60.164
+      ip: 192.168.60.164
+      access_ip: 192.168.60.164
+      
+  children:
+    seeds:
+      hosts:
+        seed1:
+        seed2:
+        seed3:
+    servers:
+      hosts:
+        server1:
+        server2:
+        server3:

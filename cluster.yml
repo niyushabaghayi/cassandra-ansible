@@ -1,0 +1,5 @@
+- hosts: servers
+  gather_facts: true
+  roles: 
+    # - { role: prerequisites }
+    - { role: cassandra }

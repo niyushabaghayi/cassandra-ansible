@@ -1,0 +1,7 @@
+- name: Ensure Cassandra is up and normal
+  command: nodetool status
+
+- name: Ensure Cassandra service is running
+  service:
+    name: cassandra
+    state: started

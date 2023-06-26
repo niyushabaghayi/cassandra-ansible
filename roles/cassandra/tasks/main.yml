@@ -1,0 +1,23 @@
+- name: Depackage a .deb package
+  become: true
+  command: dpkg -i {{ cassandra_deb_path }}
+
+- name: Install a .deb package
+  become: true
+  command: apt install -f
+
+- name: Create directory for Cassandra installation
+  become: true
+  file:
+    path: "{{ cassandra_installation_path }}"
+    state: directory
+    recurse: true
+
+- name: Generate Cassandra config file
+  become: true
+  template:
+    src: ../templates/cassandra.j2
+    dest: "{{ cassandra_conf_path }}"
+    owner: root
+    group: root
+  notify: Start Cassandra

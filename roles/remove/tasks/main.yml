@@ -1,0 +1,17 @@
+- name: Remove cassandra package
+  ansible.builtin.apt:
+    name: cassandra
+    state: absent
+
+- name: Remove dependencies that are no longer required
+  ansible.builtin.apt:
+    autoremove: yes
+
+- name: Remove cassandra files
+  command: >
+    rm -rf /var/lib/cassandra &&
+    rm -rf /var/log/cassandra &&
+    rm -rf /etc/cassandra &&
+    rm -rf /bigdata/cassandra
+  async: 0
+  poll: 0

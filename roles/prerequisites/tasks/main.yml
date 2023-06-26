@@ -1,0 +1,24 @@
+# - name: Export JAVA_HOME
+#   ansible.builtin.blockinfile:
+#     path: .bashrc
+#     block: |
+#       export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+#       export JRE_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64/jre
+#       export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+
+
+# - name: Load environment
+#   command: "source ~/.bashrc"
+
+# - name: Change java version to 8
+#   command: update-java-alternatives --set /usr/lib/jvm/java-1.11.0-openjdk-amd64
+
+# - name: Open Cassandra ports
+#   ansible.builtin.blockinfile:
+#     path: /etc/iptables/rules.v4
+#     block: |
+#       -A CHECK_INPUT -i ens160 -p tcp --dport 9042 -j ACCEPT
+#       -A CHECK_INPUT -i ens160 -p tcp --dport 7000 -j ACCEPT
+
+# - name: Load iptables
+#   shell: iptables-restore /etc/iptables/rules.v4

@@ -1,0 +1,3 @@
+---
+cassandra_installation_path: /bigdata/cassandra
+cassandra_deb_path: /home/niusha/cassandra_4.0.5_all.deb

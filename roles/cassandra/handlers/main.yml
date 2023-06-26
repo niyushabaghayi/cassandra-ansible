@@ -1,0 +1,18 @@
+---
+# handlers file for cassandra
+- name: Stop Cassandra
+  command: nodetool stopdaemon
+    
+- name: Start Cassandra
+  command: cassandra -R
+  become: true
+  become_user: root
+
+- name: Restart Cassandra
+  command: >
+    nodetool stopdaemon &&
+    sleep 5 &&
+    cassandra -R
+  async: 0
+  poll: 0
+  # Restart Cassandra configuration

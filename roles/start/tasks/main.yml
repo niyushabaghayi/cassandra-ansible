@@ -1,0 +1,4 @@
+- name: Start Cassandra
+  command: cassandra -R
+  become: true
+  become_user: root

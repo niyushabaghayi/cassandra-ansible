@@ -1,0 +1,8 @@
+- name: Restart Cassandra
+  command: >
+    nodetool stopdaemon &&
+    sleep 5 &&
+    cassandra -R
+  async: 0
+  poll: 0
+  # Restart Cassandra configuration
