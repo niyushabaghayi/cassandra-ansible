@@ -1,8 +1,9 @@
-- name: Depackage a .deb package
-  become: true
-  command: dpkg -i {{ cassandra_deb_path }}
-
 - name: Install a .deb package
+  become: true
+  ansible.builtin.apt:
+    deb: "{{ cassandra_deb_path }}"
+
+- name: Fix packages
   become: true
   command: apt install -f
 
